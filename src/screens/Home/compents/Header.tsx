@@ -4,9 +4,16 @@ import logo from '../../../assets/logo.png';
 import { loadingHeader } from '../../../services/dataLoading';
 
 class Header extends React.Component {
+  state = {
+    header: {
+      welcome: '',
+      subtitle: '',
+    }
+  }
+
   updateTop() {
     const retorno = loadingHeader();
-    console.log(retorno);
+    this.setState({ header: retorno });
   }
 
   componentDidMount() {
@@ -16,8 +23,8 @@ class Header extends React.Component {
   render() {
     return <View style={styles.top}>
       <Image source={logo} style={styles.image} />
-      <Text style={styles.welcome}>Olá, Kayo Ennrique!</Text>
-      <Text style={styles.subtitle}>Encontre os melhores produtores</Text>
+      <Text style={styles.welcome}>{this.state.header.welcome}</Text>
+      <Text style={styles.subtitle}>{this.state.header.subtitle}</Text>
     </View>
   }
 }
