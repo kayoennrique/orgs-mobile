@@ -21,7 +21,7 @@ In this project we will create the Home screen for the Orgs natural products e-c
 
 ## 🛠️ Open and run the project:
 
-# Step 1: Start the Metro Server
+## Step 1: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
@@ -35,7 +35,7 @@ npm start
 yarn start
 ```
 
-# Step 2: Start your Application
+## Step 2: Start your Application
 
 Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
@@ -63,7 +63,7 @@ If everything is set up _correctly_, you should see your new app running in your
 
 This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
-# Step 3: Modifying your App
+## Step 3: Modifying your App
 
 Now that you have successfully run the app, let's modify it.
 
