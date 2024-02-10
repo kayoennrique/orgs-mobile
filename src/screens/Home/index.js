@@ -1,10 +1,9 @@
 import React from 'react';
 import Header from './compents/Header'
-import Producers from './Producers';
+import Producers from './compents/Producers';
 
 export default function Home() {
   return <>
-    <Header />
-    <Producers />
+    <Producers header={Header} />
   </>
 }

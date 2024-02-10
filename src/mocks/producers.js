@@ -4,12 +4,12 @@ import jennyJack from '../assets/producers/jenny-jack.png';
 import grow from '../assets/producers/grow.png';
 import potager from '../assets/producers/potager.png';
 
-const generateRandomNumber = (min: any, max: any) => {
+const generateRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 const producers = {
-    title: "Producers",
+    title: "Produtores",
     list: [
         {
             name: "Green",
