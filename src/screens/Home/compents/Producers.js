@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FlatList, Text, StyleSheet } from 'react-native';
-import { loadingProducers } from '../../../services/dataLoading';
 import Productor from './Productor';
+import useProducers from '../../../hooks/useProducers';
 
 export default function Producers({ header: Header }) {
-  const [title, setTitle] = useState('');
-  const [list, setList] = useState([]);
-
-  useEffect(() => {
-    const retorno = loadingProducers();
-    setTitle(retorno.title);
-    setList(retorno.list);
-
-  }, []);
-
+  const [title, list] = useProducers();
   const HeaderList = () => {
     return <>
       <Header />
@@ -37,4 +28,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#464646',
   }
-})
+});
