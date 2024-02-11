@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
-
-import star from '../assets/estrela.png'
-import starGray from '../assets/estrelaCinza.png'
+import { StyleSheet, View } from "react-native";
+import Star from "./Star";
 
 export default function Stars({
   amount: previousAmount,
@@ -10,24 +8,17 @@ export default function Stars({
   big = false,
 }) {
   const [amount, setAmount] = useState(previousAmount);
-  const styles = stylesFunction(big);
-  const getImage = (index) => {
-    if (index < amount) {
-      return star;
-    }
-    return starGray;
-  }
   const RenderStars = () => {
     const listStars = [];
     for (let i = 0; i < 5; i++) {
       listStars.push(
-        <TouchableOpacity
+        <Star
           key={i}
           onPress={() => setAmount(i + 1)}
-          disabled={!editable}
-        >
-          <Image source={getImage(i)} style={styles.star} />
-        </TouchableOpacity>
+          disableed={!editable}
+          completed={i < amount}
+          big={big}
+        />
       );
     }
     return listStars;
@@ -37,13 +28,8 @@ export default function Stars({
   </View>
 }
 
-const stylesFunction = (big) => StyleSheet.create({
+const styles = StyleSheet.create({
   stars: {
     flexDirection: 'row',
-  },
-  star: {
-    width: big ? 36 : 12,
-    height: big ? 36 : 12,
-    marginRight: 2,
   }
 });
